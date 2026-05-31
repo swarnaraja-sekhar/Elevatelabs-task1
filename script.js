@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ----------------------------------------------------
-    // MOBILE NAVIGATION NAVBAR
-    // ----------------------------------------------------
+    // Mobile Navigation Menu Toggle
     const hamburger = document.getElementById('hamburger-menu');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -11,17 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
         navMenu.classList.toggle('active');
         hamburger.setAttribute('aria-expanded', isActive);
         
-        // Prevent background scrolling when menu is active
-        if (isActive) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
+        document.body.style.overflow = isActive ? 'hidden' : '';
     };
 
     hamburger.addEventListener('click', toggleMenu);
 
-    // Close menu when clicking nav link or outside menu
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (hamburger.classList.contains('active')) {
@@ -38,9 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ----------------------------------------------------
-    // HEADER SCROLL TRANSITION
-    // ----------------------------------------------------
+    // Navbar Scroll Transition
     const header = document.querySelector('.navbar-header');
     
     const handleScroll = () => {
@@ -52,18 +42,16 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial invocation on load
+    handleScroll();
 
-    // ----------------------------------------------------
-    // SCROLL REVEAL ANIMATIONS (IntersectionObserver)
-    // ----------------------------------------------------
+    // Scroll Reveal Animations (Intersection Observer)
     const revealElements = document.querySelectorAll('.reveal-fade-up, .reveal-fade-left, .reveal-fade-right');
     
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('reveal-active');
-                observer.unobserve(entry.target); // Reveal once
+                observer.unobserve(entry.target);
             }
         });
     }, {
@@ -75,14 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(element);
     });
 
-    // ----------------------------------------------------
-    // SCROLL SPY ACTIVE NAV LINK
-    // ----------------------------------------------------
+    // Scroll Spy (Active Section Indicator)
     const sections = document.querySelectorAll('section');
     
     const scrollSpy = () => {
         let currentSectionId = '';
-        const scrollPosition = window.scrollY + 120; // Offset for navbar
+        const scrollPosition = window.scrollY + 120;
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -103,14 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', scrollSpy);
     scrollSpy();
 
-    // ----------------------------------------------------
-    // STATISTICS DYNAMIC COUNTER
-    // ----------------------------------------------------
+    // Animated Statistics Counter
     const statNumbers = document.querySelectorAll('.stat-number');
     
     const animateCounter = (element) => {
         const target = parseInt(element.getAttribute('data-target'), 10);
-        const duration = 2000; // Animation duration in ms
+        const duration = 2000;
         const startTime = performance.now();
 
         const updateCount = (currentTime) => {
@@ -118,9 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (elapsedTime >= duration) {
                 element.textContent = target;
             } else {
-                // Quadratic out easing function
                 const progress = elapsedTime / duration;
-                const easeProgress = progress * (2 - progress);
+                const easeProgress = progress * (2 - progress); // Quadratic out easing
                 const currentCount = Math.floor(easeProgress * target);
                 element.textContent = currentCount;
                 requestAnimationFrame(updateCount);
@@ -130,7 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(updateCount);
     };
 
-    // Trigger statistics countdown when visible
     const statsSection = document.querySelector('.stats-grid');
     let countersAnimated = false;
 
@@ -150,9 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
         statsObserver.observe(statsSection);
     }
 
-    // ----------------------------------------------------
-    // GLASSMORPHIC CARD CURSOR GLOW EFFECT (Vercel Style)
-    // ----------------------------------------------------
+    // Glassmorphic Card Cursor Hover Highlight (Relative Coordinates)
     const featureCards = document.querySelectorAll('.feature-card');
 
     featureCards.forEach(card => {

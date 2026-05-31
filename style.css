@@ -1,8 +1,5 @@
-/* ----------------------------------------------------
-   DESIGN SYSTEM & VARIABLES
-   ---------------------------------------------------- */
+/* Theme Variables & Design System Tokens */
 :root {
-    /* Color Palette */
     --bg-dark: #060814;
     --bg-darker: #03040a;
     --bg-card: rgba(15, 23, 42, 0.45);
@@ -24,16 +21,13 @@
     --text-gray: #94a3b8;
     --text-light-gray: #cbd5e1;
     
-    /* Typography */
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
     
-    /* Transitions */
     --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-normal: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     
-    /* Dimensions */
     --navbar-height: 80px;
     --border-radius-sm: 8px;
     --border-radius-md: 16px;
@@ -42,9 +36,7 @@
     --container-width: 1200px;
 }
 
-/* ----------------------------------------------------
-   BASE STYLES & RESET
-   ---------------------------------------------------- */
+/* Base resets and normalization */
 * {
     margin: 0;
     padding: 0;
@@ -81,9 +73,7 @@ ul {
     list-style: none;
 }
 
-/* ----------------------------------------------------
-   GLOWING BACKGROUND ELEMENTS
-   ---------------------------------------------------- */
+/* Glowing background ambient graphics */
 .glow-bg {
     position: absolute;
     top: 0;
@@ -142,9 +132,7 @@ ul {
     }
 }
 
-/* ----------------------------------------------------
-   LAYOUT CONTAINERS
-   ---------------------------------------------------- */
+/* Global layouts */
 .container {
     width: 100%;
     max-width: var(--container-width);
@@ -157,9 +145,7 @@ section {
     position: relative;
 }
 
-/* ----------------------------------------------------
-   TYPOGRAPHY & GRADIENTS
-   ---------------------------------------------------- */
+/* Typography, headings and text overlays */
 h1, h2, h3, h4 {
     font-family: var(--font-heading);
     font-weight: 700;
@@ -199,7 +185,6 @@ h1, h2, h3, h4 {
     color: var(--text-gray);
 }
 
-/* Badge */
 .badge {
     display: inline-flex;
     align-items: center;
@@ -220,9 +205,7 @@ h1, h2, h3, h4 {
     color: #a78bfa;
 }
 
-/* ----------------------------------------------------
-   BUTTON SYSTEM
-   ---------------------------------------------------- */
+/* Premium button structures */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -295,9 +278,6 @@ h1, h2, h3, h4 {
     transform: translateX(4px);
 }
 
-/* ----------------------------------------------------
-   GLASSMORPHISM UTILITIES
-   ---------------------------------------------------- */
 .glass-panel {
     background: var(--bg-card);
     border: 1px solid var(--border-glass);
@@ -306,9 +286,7 @@ h1, h2, h3, h4 {
     border-radius: var(--border-radius-md);
 }
 
-/* ----------------------------------------------------
-   NAVIGATION NAVBAR
-   ---------------------------------------------------- */
+/* Glassmorphism navigation header */
 .navbar-header {
     position: fixed;
     top: 0;
@@ -425,7 +403,6 @@ h1, h2, h3, h4 {
     display: none;
 }
 
-/* Hamburger Menu */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -447,7 +424,6 @@ h1, h2, h3, h4 {
     transition: var(--transition-normal);
 }
 
-/* Active Hamburger Transform */
 .hamburger.active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -460,9 +436,7 @@ h1, h2, h3, h4 {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* ----------------------------------------------------
-   HERO SECTION
-   ---------------------------------------------------- */
+/* Hero Section */
 .hero-section {
     padding-top: calc(var(--navbar-height) + 60px);
     padding-bottom: 120px;
@@ -519,7 +493,6 @@ h1, h2, h3, h4 {
     pointer-events: none;
 }
 
-/* Browser Mockup Wrapper */
 .browser-mockup {
     background: rgba(10, 15, 30, 0.65);
     border: 1px solid var(--border-glass);
@@ -578,9 +551,7 @@ h1, h2, h3, h4 {
     transition: var(--transition-normal);
 }
 
-/* ----------------------------------------------------
-   FEATURES SECTION
-   ---------------------------------------------------- */
+/* Features Grid Card System */
 .features-section {
     background-color: var(--bg-darker);
     position: relative;
@@ -679,9 +650,7 @@ h1, h2, h3, h4 {
     line-height: 1.6;
 }
 
-/* ----------------------------------------------------
-   ABOUT SECTION
-   ---------------------------------------------------- */
+/* About and Testimonials */
 .about-section {
     overflow: hidden;
 }
@@ -709,7 +678,6 @@ h1, h2, h3, h4 {
     margin-bottom: 40px;
 }
 
-/* Testimonial Card */
 .testimonial-card {
     background: rgba(15, 23, 42, 0.35);
     border: 1px solid var(--border-glass);
@@ -769,7 +737,6 @@ h1, h2, h3, h4 {
     color: var(--text-gray);
 }
 
-/* Statistics Grid */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -826,9 +793,7 @@ h1, h2, h3, h4 {
     font-weight: 500;
 }
 
-/* ----------------------------------------------------
-   SERVICES SECTION
-   ---------------------------------------------------- */
+/* Services */
 .services-section {
     background-color: var(--bg-darker);
 }
@@ -880,9 +845,7 @@ h1, h2, h3, h4 {
     line-height: 1.6;
 }
 
-/* ----------------------------------------------------
-   CONTACT SECTION
-   ---------------------------------------------------- */
+/* Contact CTA layout */
 .contact-section {
     background-color: var(--bg-dark);
 }
@@ -934,7 +897,6 @@ h1, h2, h3, h4 {
     margin-bottom: 40px;
 }
 
-/* Contact / Subscription Form */
 .contact-form {
     display: flex;
     gap: 16px;
@@ -987,9 +949,7 @@ h1, h2, h3, h4 {
     white-space: nowrap;
 }
 
-/* ----------------------------------------------------
-   FOOTER SECTION
-   ---------------------------------------------------- */
+/* Footer structure */
 .footer {
     background-color: var(--bg-darker);
     border-top: 1px solid var(--border-glass);
@@ -1074,9 +1034,7 @@ h1, h2, h3, h4 {
     font-size: 0.85rem;
 }
 
-/* ----------------------------------------------------
-   SCROLL REVEAL TRIGGERS
-   ---------------------------------------------------- */
+/* Viewport triggers for Intersection Observer animations */
 .reveal-fade-up, .reveal-fade-left, .reveal-fade-right {
     opacity: 0;
     transition: opacity var(--transition-slow), transform var(--transition-slow);
@@ -1099,7 +1057,7 @@ h1, h2, h3, h4 {
     transform: translate(0, 0);
 }
 
-/* Custom Scrollbar */
+/* Scrollbar customizations */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -1118,9 +1076,7 @@ h1, h2, h3, h4 {
     background: rgba(139, 92, 246, 0.4);
 }
 
-/* ----------------------------------------------------
-   RESPONSIVE DESIGN BREAKPOINTS
-   ---------------------------------------------------- */
+/* Responsive Breakpoints */
 @media (max-width: 1024px) {
     section {
         padding: 80px 0;
@@ -1196,7 +1152,6 @@ h1, h2, h3, h4 {
         font-size: 1.05rem;
     }
     
-    /* Hamburger & Mobile Nav */
     .hamburger {
         display: flex;
     }
@@ -1243,7 +1198,6 @@ h1, h2, h3, h4 {
         width: 100%;
     }
     
-    /* Grid Collapse */
     .features-grid {
         grid-template-columns: 1fr;
     }
